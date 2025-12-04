@@ -1,85 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Portafolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-    }
-    section {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .proyecto {
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 30px;
-    }
-  </style>
+  <meta charset="utf-8">
+  <title>Portfolio de [Tu Nombre]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio personal con proyectos, experiencia y contacto usando estructura semántica HTML5.">
 </head>
 <body>
+  <!-- Encabezado global del sitio -->
   <header>
-    <h1>Mi Portafolio</h1>
-    <nav>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
+    <h1>Portfolio de [Tu Nombre]</h1>
+    <p>Desarrollador/a web • Proyectos, experiencia y contacto</p>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="#presentacion">Presentación</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>Hola, soy [Tu Nombre], desarrollador apasionado por crear soluciones creativas y funcionales. Me gusta trabajar con diseño y código para lograr experiencias claras y atractivas.</p>
-  </section>
+  <!-- Contenedor principal: dos secciones (columna izquierda y derecha) -->
+  <main>
+    <!-- Sección izquierda: navegación secundaria vertical -->
+    <section aria-labelledby="sec-izquierda">
+      <header>
+        <h2 id="sec-izquierda">Menú del portfolio</h2>
+        <p>Accesos rápidos a secciones clave.</p>
+      </header>
 
-  <section id="proyectos">
-    <h2>Proyectos</h2>
-    <div class="proyecto">
-      <h3>Proyecto 1</h3>
-      <p>Descripción breve del proyecto. Qué tecnologías usaste y qué problema resolviste.</p>
-    </div>
-    <div class="proyecto">
-      <h3>Proyecto 2</h3>
-      <p>Descripción breve del proyecto. Qué tecnologías usaste y qué problema resolviste.</p>
-    </div>
-  </section>
+      <nav aria-label="Navegación secundaria">
+        <ul>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#cv">Currículum</a></li>
+        </ul>
+      </nav>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Puedes escribirme a: <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></p>
-  </section>
+      <footer>
+        <small>Actualizado: <time datetime="2025-12-04">4 dic 2025</time></small>
+      </footer>
+    </section>
 
+    <!-- Sección derecha: contenido principal con artículos -->
+    <section aria-labelledby="sec-derecha">
+      <header>
+        <h2 id="sec-derecha">Contenido destacado</h2>
+        <p>Proyectos recientes y experiencia relevante.</p>
+      </header>
+
+      <!-- Artículo 1: Proyecto -->
+      <article aria-labelledby="proyecto-uno">
+        <header>
+          <h3 id="proyecto-uno">Proyecto: Aplicación de tareas</h3>
+          <p>Rol: Frontend • Tecnologías: HTML5, CSS, JS</p>
+        </header>
+        <p>
+          Desarrollé una SPA ligera para gestión de tareas con componentes modulares y
+          un enfoque accesible (navegación por teclado y etiquetas semánticas).
+        </p>
+        <p>
+          El proyecto incluye filtrado por estado, persistencia local y una arquitectura
+          basada en eventos para mantener el código desacoplado.
+        </p>
+        <footer>
+          <p>Enlace: <a href="#" rel="nofollow">Demo</a> · <a href="#" rel="noopener">Código</a></p>
+        </footer>
+      </article>
+
+      <!-- Artículo 2: Experiencia -->
+      <article aria-labelledby="experiencia-uno">
+        <header>
+          <h3 id="experiencia-uno">Experiencia: Empresa XYZ</h3>
+          <p>Rol: Desarrollador/a web • Periodo: 2023–2025</p>
+        </header>
+        <p>
+          Participé en la creación de componentes reutilizables y accesibles, optimizando
+          el rendimiento y la estructura semántica para SEO y usabilidad.
+        </p>
+        <p>
+          Implementé buenas prácticas de etiquetado y microdatos, mejorando la
+          legibilidad del contenido por parte de usuarios y motores de búsqueda.
+        </p>
+        <footer>
+          <p>Logros: +30% en Core Web Vitals • Reducción de deuda técnica</p>
+        </footer>
+      </article>
+
+      <footer>
+        <p id="contacto">Contacto: <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a></p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Pie de página global -->
   <footer>
-    <p>&copy; 2025 Mi Portafolio</p>
+    <p>&copy; 2025 [Tu Nombre]. Todos los derechos reservados.</p>
+    <nav aria-label="Enlaces legales">
+      <ul>
+        <li><a href="#cv" rel="bookmark">CV</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+    </nav>
   </footer>
+
+  <!-- Secciones de contenido referenciadas en el menú (placeholders) -->
+  <section id="presentacion" aria-label="Presentación">
+    <header>
+      <h2>Presentación</h2>
+    </header>
+    <p id="sobre-mi">
+      Soy [Tu Nombre], me especializo en desarrollo web centrado en accesibilidad,
+      rendimiento y semántica para construir experiencias claras y efectivas.
+    </p>
+    <footer>
+      <small>Ubicación: Barcelona, España</small>
+    </footer>
+  </section>
+
+  <section id="proyectos" aria-label="Proyectos">
+    <header>
+      <h2>Proyectos</h2>
+    </header>
+    <p>Listado de proyectos con enfoque en UX, accesibilidad y código mantenible.</p>
+    <footer>
+      <small>Más en el repositorio público.</small>
+    </footer>
+  </section>
+
+  <section id="experiencia" aria-label="Experiencia">
+    <header>
+      <h2>Experiencia</h2>
+    </header>
+    <p>Experiencia en equipos ágiles, diseño de sistemas y optimización SEO técnico.</p>
+    <footer>
+      <small>Referencias disponibles a solicitud.</small>
+    </footer>
+  </section>
+
+  <section id="habilidades" aria-label="Habilidades">
+    <header>
+      <h2>Habilidades</h2>
+    </header>
+    <p>HTML5 semántico, accesibilidad, rendimiento, CSS modular, JavaScript.</p>
+    <footer>
+      <small>Siempre aprendiendo y mejorando.</small>
+    </footer>
+  </section>
+
+  <section id="servicios" aria-label="Servicios">
+    <header>
+      <h2>Servicios</h2>
+    </header>
+    <p>Desarrollo frontend, auditoría de accesibilidad, consultoría de rendimiento.</p>
+    <footer>
+      <small>Contacta para disponibilidad.</small>
+    </footer>
+  </section>
+
+  <section id="blog" aria-label="Blog">
+    <header>
+      <h2>Blog</h2>
+    </header>
+    <p>Notas sobre semántica, arquitectura frontend y experiencia de usuario.</p>
+    <footer>
+      <small>Próximas publicaciones en preparación.</small>
+    </footer>
+  </section>
+
+  <section id="cv" aria-label="Currículum">
+    <header>
+      <h2>Currículum</h2>
+    </header>
+    <p>Resumen profesional y recorrido académico.</p>
+    <footer>
+      <small>Versión PDF disponible bajo petición.</small>
+    </footer>
+  </section>
 </body>
 </html>
