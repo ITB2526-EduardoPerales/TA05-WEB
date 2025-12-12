@@ -43,13 +43,13 @@ header h1, aside header h2, main section h2, article header h3 {
 }
 
 header h1 {
-  font-size: 3.5em;
+  font-size: clamp(2.5em, 5vw, 3.5em);
   text-transform: uppercase;
 }
 
 aside header h2,
 main section:last-of-type h2 {
-  font-size: 2.2em;
+  font-size: clamp(1.8em, 4vw, 2.2em);
   margin-bottom: 20px;
   text-align: center;
 
@@ -86,20 +86,29 @@ article header h3 a:hover {
 header nav ul {
   list-style: none;
   display: flex;
+  /* Permitimos que se envuelvan si no hay espacio (esto evita el desbordamiento) */
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  /* Se mantiene un gap uniforme para horizontalidad */
+  gap: 10px;
   margin-top: 20px;
 }
 
 header nav a {
   background-image: linear-gradient(135deg, #00ffe7 0%, #00a299 100%);
   color: #1f2a3a;
-  padding: 10px 18px;
+  /* Reducimos el padding horizontal para ahorrar espacio en móvil */
+  padding: 8px 15px;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 4px 10px rgba(0, 255, 231, 0.4);
+  /* Eliminamos el min-width para que se adapte al contenido */
+  min-width: 0;
+  text-align: center;
+  /* Hacemos que la fuente sea un poco más pequeña */
+  font-size: clamp(0.8em, 2vw, 1em);
 }
 
 header nav a:hover {
@@ -123,12 +132,12 @@ aside {
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  align-self: start;
 }
 
 aside p {
   margin-bottom: 15px;
   color: #334054;
+  font-size: 1.05em;
 }
 
 main section:last-of-type {
@@ -139,12 +148,13 @@ main section:last-of-type {
 }
 
 .project-list {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 article {
   width: 100%;
-  margin-bottom: 20px;
   padding: 20px;
   border: 1px solid #eee;
   border-radius: 6px;
@@ -190,9 +200,18 @@ body > footer {
   text-align: center;
 }
 
+/* --- Media Queries (Se ajusta solo el layout principal) --- */
+
 @media (max-width: 900px) {
+  /* El diseño de dos columnas pasa a una sola columna */
   main {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  aside {
+    border-left: none;
+    border-top: 4px solid #00ffe7;
   }
 }
 
@@ -201,20 +220,33 @@ body > footer {
     padding: 0 15px 30px;
   }
 
+  /* **MANTENEMOS LA HORIZONTALIDAD:** Quitamos flex-direction: column para que sigan en fila. */
   header nav ul {
-    flex-direction: column;
-    gap: 10px;
+    /* flex-direction: column; <-- ELIMINADO */
+    gap: 8px; /* Reducimos ligeramente el espacio entre botones */
+    padding: 0 10px;
+  }
+
+  header nav a {
+    /* width: 100%; <-- ELIMINADO */
+    padding: 8px 12px; /* Más compacto para caber en una sola línea */
+    font-size: 0.85em; /* Reducimos la fuente para ahorrar espacio */
   }
 
   .logo {
     height: 80px;
   }
 
-  header h1 {
-    font-size: 2.5em;
+  header {
+    padding: 20px 10px;
   }
 
-  article {
-    width: 100%;
+  aside, main section:last-of-type, article {
+    padding: 20px;
+  }
+
+  article:hover {
+    transform: none;
+    box-shadow: 0 5px 10px rgba(0, 255, 231, 0.1);
   }
 }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detall del projecte: Honeypot Deployment and Analysis (T-Pot).">
+    <meta name="keywords" content="honeypot, T-Pot, ciberseguretat, anàlisi, projecte">
+    <title>Detall Projecte: T-Pot</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles-tpot.css">
+</head>
+<body>
+    <header class="capcalera-principal">
+        <div class="logo-titulo">
+            <img src="../img/logo1.png" alt="Logo Portfoli" class="logo">
+            <h1>Portfolio</h1>
+        </div>
+        <nav class="menu-navegacio">
+            <ul>
+                <li><a href="../index.html">Inici</a></li>
+                <li><a href="projects.html">Projectes</a></li>
+                <li><a href="contact.html">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="wrapper-contingut-detall">
+        <section class="detall-projecte">
+            <header>
+                <h2>Honeypot Deployment and Analysis (T-Pot)</h2>
+            </header>
+            <article class="contingut-article">
+                <header>
+                    <h3>Visió General i Objectius</h3>
+                </header>
+
+                <div class="area-visual-projecte">
+                    <p>[Aquí aniran les imatges, captures de pantalla o gràfics de T-Pot]</p>
+                </div>
+
+                <p>
+                    Aquest projecte va consistir en la implementació, configuració i anàlisi d'un sistema Honeypot utilitzant T-Pot. T-Pot és una plataforma de codi obert que agrupa múltiples honeypots i eines d'anàlisi, facilitant la recol·lecció de dades sobre atacs en temps real.
+                    <br><br>
+                    **Metodologia:** Es va desplegar T-Pot en un entorn virtualitzat, exposant el servei a Internet per atreure el trànsit maliciós. Totes les dades (intents de login, explotacions, etc.) van ser recollides i visualitzades amb Kibana (part de l'ELK Stack integrat).
+                    <br><br>
+                    **Resultats Clau:** L'anàlisi va revelar que la majoria dels atacs eren intents automatitzats de força bruta (SSH i Telnet) originats a diverses regions. Aquesta informació és crucial per entendre els vectors d'amenaça més comuns i construir regles de firewall més robustes. El projecte va servir com a exercici pràctic en la defensa preventiva i l'anàlisi de dades de seguretat.
+                </p>
+
+            </article>
+            <footer>
+                <p>Tecnologies utilitzades: T-Pot, Kibana, Docker, Linux.</p>
+                <a href="#documentacio">Veure Documentació Completa</a>
+            </footer>
+        </section>
+    </main>
+
+    <footer class="peu-de-pagina-general">
+        <p>&copy; 2025 [El vostre nom]. Tots els drets reservats.</p>
+        <div class="xarxes-socials">
+            <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
+        </div>
+    </footer>
+</body>
+</html>
