@@ -1,3 +1,41 @@
+/* style.css */
+
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 255, 231, 0.4), 0 0 10px rgba(0, 255, 231, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 231, 0.8), 0 0 30px rgba(0, 255, 231, 0.4);
+  }
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#particles-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 231, 0.05),
+    rgba(0, 255, 231, 0.05) 1px,
+    transparent 1px,
+    transparent 30px
+  ), repeating-linear-gradient(
+    90deg,
+    rgba(0, 255, 231, 0.05),
+    rgba(0, 255, 231, 0.05) 1px,
+    transparent 1px,
+    transparent 30px
+  );
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +73,8 @@ header {
   width: auto;
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(0, 255, 231, 0.7);
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
 header h1, aside header h2, main section h2, article header h3 {
@@ -45,6 +85,10 @@ header h1, aside header h2, main section h2, article header h3 {
 header h1 {
   font-size: clamp(2.5em, 5vw, 3.5em);
   text-transform: uppercase;
+  min-height: 1.2em;
+  min-width: 300px;
+  padding: 0;
+  margin: 0;
 }
 
 aside header h2,
@@ -52,13 +96,11 @@ main section:last-of-type h2 {
   font-size: clamp(1.8em, 4vw, 2.2em);
   margin-bottom: 20px;
   text-align: center;
-
   background: linear-gradient(180deg, #00ffe7 0%, #00a299 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: #00a299;
-
   border-bottom: 2px solid #00ffe7;
   padding-bottom: 10px;
 }
@@ -74,7 +116,6 @@ article header h3 a {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: #00a299;
-
   text-decoration: none;
   transition: opacity 0.3s ease;
 }
@@ -86,36 +127,40 @@ article header h3 a:hover {
 header nav ul {
   list-style: none;
   display: flex;
-  /* Permitimos que se envuelvan si no hay espacio (esto evita el desbordamiento) */
   flex-wrap: wrap;
   justify-content: center;
-  /* Se mantiene un gap uniforme para horizontalidad */
-  gap: 10px;
+  gap: 15px;
   margin-top: 20px;
 }
 
 header nav a {
   background-image: linear-gradient(135deg, #00ffe7 0%, #00a299 100%);
   color: #1f2a3a;
-  /* Reducimos el padding horizontal para ahorrar espacio en móvil */
   padding: 8px 15px;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 4px 10px rgba(0, 255, 231, 0.4);
-  /* Eliminamos el min-width para que se adapte al contenido */
   min-width: 0;
   text-align: center;
-  /* Hacemos que la fuente sea un poco más pequeña */
   font-size: clamp(0.8em, 2vw, 1em);
 }
 
 header nav a:hover {
   filter: brightness(1.2);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 255, 231, 0.6);
+  transform: none;
+  box-shadow: 0 4px 10px rgba(0, 255, 231, 0.4);
 }
+
+.typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+    color: #00ffe7;
+}
+
 
 main {
   display: grid;
@@ -131,6 +176,7 @@ aside {
   border-left: 4px solid #00ffe7;
   padding: 25px;
   border-radius: 8px;
+  animation: neon-pulse 4s ease-in-out infinite alternate;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -181,15 +227,15 @@ article footer a {
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   font-size: 0.9em;
   box-shadow: 0 2px 5px rgba(0, 255, 231, 0.3);
 }
 
 article footer a:hover {
   filter: brightness(1.2);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 255, 231, 0.5);
+  transform: none;
+  box-shadow: 0 2px 5px rgba(0, 255, 231, 0.3);
 }
 
 body > footer {
@@ -200,10 +246,7 @@ body > footer {
   text-align: center;
 }
 
-/* --- Media Queries (Se ajusta solo el layout principal) --- */
-
 @media (max-width: 900px) {
-  /* El diseño de dos columnas pasa a una sola columna */
   main {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -220,17 +263,14 @@ body > footer {
     padding: 0 15px 30px;
   }
 
-  /* **MANTENEMOS LA HORIZONTALIDAD:** Quitamos flex-direction: column para que sigan en fila. */
   header nav ul {
-    /* flex-direction: column; <-- ELIMINADO */
-    gap: 8px; /* Reducimos ligeramente el espacio entre botones */
+    gap: 8px;
     padding: 0 10px;
   }
 
   header nav a {
-    /* width: 100%; <-- ELIMINADO */
-    padding: 8px 12px; /* Más compacto para caber en una sola línea */
-    font-size: 0.85em; /* Reducimos la fuente para ahorrar espacio */
+    padding: 8px 12px;
+    font-size: 0.85em;
   }
 
   .logo {

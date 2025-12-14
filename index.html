@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 <header>
   <div class="logo-titulo">
     <img src="img/logo1.png" alt="Eduardo's Logo" class="logo">
-    <h1>Portfolio</h1>
+    <h1 id="main-title"></h1>
   </div>
   <nav>
     <ul>
@@ -22,8 +23,10 @@
   </nav>
 </header>
 
+  <div id="particles-background"></div>
+
   <main>
-    <aside>
+    <aside id="aside-neón">
       <header>
         <h2>Welcome to my Portfolio</h2>
       </header>
@@ -37,7 +40,7 @@
       </header>
 
       <div class="project-list">
-        <article>
+        <article data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
           <header>
             <h3><a href="./pages/project_tpot.html">Honeypot Deployment and Analysis (T-Pot)</a></h3>
           </header>
@@ -48,7 +51,7 @@
           </footer>
         </article>
 
-        <article>
+        <article data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
           <header>
             <h3><a href="pages/project_irs.html">Incident Reporting System</a></h3>
           </header>
@@ -64,5 +67,10 @@
   <footer>
     <p>&copy; 2025 Eduardo. All rights reserved.</p>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="js/interaction.js"></script>
+
 </body>
 </html>
