@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detall del projecte: Honeypot Deployment and Analysis (T-Pot).">
-    <meta name="keywords" content="honeypot, T-Pot, ciberseguretat, anàlisi, projecte">
-    <title>Detall Projecte: T-Pot</title>
+    <meta name="description" content="Detalle del proyecto: Despliegue y Análisis de Honeypot (T-Pot).">
+    <meta name="keywords" content="honeypot, T-Pot, ciberseguridad, análisis, proyecto">
+    <title>Detalle Proyecto: T-Pot</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 
@@ -14,14 +14,14 @@
 <body>
     <header class="capcalera-principal">
         <div class="logo-titulo">
-            <img src="../img/logo1.png" alt="Logo Portfoli" class="logo">
+            <img src="../img/logo1.png" alt="Logo Portafolio" class="logo">
             <h1>Portfolio</h1>
         </div>
         <nav class="menu-navegacio">
             <ul>
-                <li><a href="../index.html">Inici</a></li>
-                <li><a href="projects.html">Projectes</a></li>
-                <li><a href="contact.html">Contacte</a></li>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -33,34 +33,47 @@
             </header>
             <article class="contingut-article">
                 <header>
-                    <h3>Visió General i Objectius</h3>
+                    <h3>Visión General y Objetivos</h3>
                 </header>
 
                 <div class="area-visual-projecte">
-                    <p>[Aquí aniran les imatges, captures de pantalla o gràfics de T-Pot]</p>
+                    <img src="../img/tpot_esquema.png" alt="Esquema de arquitectura de T-Pot">
+                    <p>Diagrama de Arquitectura de Despliegue de T-Pot</p>
                 </div>
 
                 <p>
-                    Aquest projecte va consistir en la implementació, configuració i anàlisi d'un sistema Honeypot utilitzant T-Pot. T-Pot és una plataforma de codi obert que agrupa múltiples honeypots i eines d'anàlisi, facilitant la recol·lecció de dades sobre atacs en temps real.
-                    <br><br>
-                    **Metodologia:** Es va desplegar T-Pot en un entorn virtualitzat, exposant el servei a Internet per atreure el trànsit maliciós. Totes les dades (intents de login, explotacions, etc.) van ser recollides i visualitzades amb Kibana (part de l'ELK Stack integrat).
-                    <br><br>
-                    **Resultats Clau:** L'anàlisi va revelar que la majoria dels atacs eren intents automatitzats de força bruta (SSH i Telnet) originats a diverses regions. Aquesta informació és crucial per entendre els vectors d'amenaça més comuns i construir regles de firewall més robustes. El projecte va servir com a exercici pràctic en la defensa preventiva i l'anàlisi de dades de seguretat.
+                    Este proyecto consistió en la implementación, configuración y análisis de un sistema Honeypot utilizando T-Pot. T-Pot es una plataforma de código abierto que agrupa múltiples honeypots y herramientas de análisis, facilitando la recolección de datos sobre ataques en tiempo real.
                 </p>
+                <div class="imagen-parrafo">
+                    </div>
+
+                <p>
+                    <strong>Metodología:</strong> Se desplegó T-Pot en un entorno virtualizado, exponiendo el servicio a Internet para atraer el tráfico malicioso. Todas las datos (intentos de login, explotaciones, etc.) fueron recogidas y visualizadas con Kibana (parte del ELK Stack integrado).
+                </p>
+                <div class="imagen-parrafo">
+                    </div>
+
+                <p>
+                    <strong>Resultados Clave:</strong> El análisis reveló que la mayoría de los ataques eran intentos automatizados de fuerza bruta (SSH y Telnet) originados en diversas regiones. Esta información es crucial para entender los vectores de amenaza más comunes y construir reglas de firewall más robustas. El proyecto sirvió como ejercicio práctico en la defensa preventiva y el análisis de datos de seguridad.
+                </p>
+                <div class="imagen-parrafo">
+                    </div>
 
             </article>
             <footer>
-                <p>Tecnologies utilitzades: T-Pot, Kibana, Docker, Linux.</p>
-                <a href="#documentacio">Veure Documentació Completa</a>
+                <p>Tecnologías utilizadas: T-Pot, Kibana, Docker, Linux.</p>
+                <a href="#documentacion">Ver Documentación Completa</a>
             </footer>
         </section>
     </main>
 
     <footer class="peu-de-pagina-general">
-        <p>&copy; 2025 [El vostre nom]. Tots els drets reservats.</p>
+        <p>&copy; 2025 Eduardo. Todos los derechos reservados.</p>
         <div class="xarxes-socials">
             <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
         </div>
     </footer>
+
+    <script src="../js/tpot-interaction.js"></script>
 </body>
 </html>

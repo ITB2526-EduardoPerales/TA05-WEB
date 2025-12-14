@@ -91,10 +91,11 @@ body {
   font-size: clamp(0.8em, 2vw, 1em);
 }
 
+/* ⚠️ Se eliminan estilos de hover para que irs-interaction.js tome el control de la animación 3D */
 .menu-navegacio a:hover, .detall-projecte footer a:hover {
-  filter: brightness(1.2);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 255, 231, 0.6);
+  /* filter: brightness(1.2); */
+  /* transform: translateY(-2px); */
+  /* box-shadow: 0 6px 14px rgba(0, 255, 231, 0.6); */
 }
 
 .peu-de-pagina-general {
@@ -121,7 +122,7 @@ body {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid #00ffe7; 
+    border: 1px solid #00ffe7;
 }
 
 .contingut-article {
@@ -139,19 +140,30 @@ body {
     white-space: pre-line;
 }
 
+/* 🎨 ESTILOS MODIFICADOS para el área del Diagrama de Flujo (para compactar) */
 .area-visual-projecte {
     background-color: #e0faff;
     border: 2px dashed #00a299;
-    padding: 40px 20px;
+    padding: 20px 20px 10px; /* Ajuste para compactar */
     margin: 20px 0;
     text-align: center;
-    min-height: 250px;
+    min-height: auto; /* Ajuste para eliminar el espacio vacío y ajustarse a la imagen */
     border-radius: 8px;
     font-size: 1.2em;
     color: #00a299;
     font-weight: bold;
     box-shadow: 0 0 15px rgba(0, 255, 231, 0.2);
 }
+
+/* Estilo para imágenes dentro de area-visual-projecte (redimensionado correcto) */
+.area-visual-projecte img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 4px;
+}
+
 
 .detall-projecte footer {
     margin-top: 30px;
@@ -171,15 +183,42 @@ body {
     padding: 6px 12px;
 }
 
+/* 🖼️ ESTILOS PARA LAS IMÁGENES POR PÁRRAFO (.imagen-parrafo) */
+.imagen-parrafo {
+    text-align: center;
+    margin: 30px 0;
+    padding: 15px;
+    border: 1px solid #e0e6f0;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+.imagen-parrafo img {
+    max-width: 100%; /* Redimensionado correcto y responsivo */
+    height: auto;    /* Mantiene la proporción */
+    border: 2px solid #00ffe7;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.imagen-parrafo img:hover {
+    /* Mantener el hover para las imágenes individuales si no son links */
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+/* ---------------------------------------------------- */
+
+
 @media (max-width: 768px) {
     .capcalera-principal {
         padding: 20px 10px;
     }
-    
+
     .menu-navegacio ul {
-        gap: 8px; 
+        gap: 8px;
     }
-    
+
     .menu-navegacio a {
         padding: 8px 12px;
         font-size: 0.85em;
@@ -192,13 +231,18 @@ body {
     .wrapper-contingut-detall {
         padding: 0 15px 30px;
     }
-    
+
     .detall-projecte {
         padding: 20px;
     }
 
     .area-visual-projecte {
-        min-height: 150px;
+        min-height: auto;
         padding: 20px 10px;
+    }
+
+    .imagen-parrafo {
+        margin: 20px 0;
+        padding: 10px;
     }
 }

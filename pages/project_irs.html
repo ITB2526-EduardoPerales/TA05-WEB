@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detall del projecte: Incident Reporting System (IRS).">
-    <meta name="keywords" content="IRS, gestió d'incidents, ciberseguretat, desenvolupament web, projecte">
-    <title>Detall Projecte: IRS</title>
+    <meta name="description" content="Project Detail: Incident Reporting System (IRS), processing CSV, XML, and JSON data.">
+    <meta name="keywords" content="IRS, incident management, cybersecurity, Python, CSV, XML, JSON, project">
+    <title>Project Detail: Incident Reporting System</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 
@@ -14,14 +14,13 @@
 <body>
     <header class="capcalera-principal">
         <div class="logo-titulo">
-            <img src="../img/logo1.png" alt="Logo Portfoli" class="logo">
-            <h1>Portfolio</h1>
-        </div>
+            <img src="../img/logo1.png" alt="Portfolio Logo" class="logo">
+            <h1>Portfolio</h1> </div>
         <nav class="menu-navegacio">
             <ul>
-                <li><a href="../index.html">Inici</a></li>
-                <li><a href="projects.html">Projectes</a></li>
-                <li><a href="contact.html">Contacte</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="proyectos.html">Projects</a></li>
+                <li><a href="contacto.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -33,33 +32,69 @@
             </header>
             <article class="contingut-article">
                 <header>
-                    <h3>Arquitectura i Funcionalitats Clau</h3>
+                    <h3>Architecture and Data Processing (CSV, XML, JSON)</h3>
                 </header>
 
                 <div class="area-visual-projecte">
-                    <p>[Aquí aniran els esquemes d'arquitectura, maquetes UI o diagrames de flux de l'IRS]</p>
+                    <img src="../img/diagrama_irs.png" alt="IRS Data Flow Diagram">
+                    <p>IRS Data Flow Diagram</p>
                 </div>
 
                 <p>
-                    L'Incident Reporting System és una aplicació web desenvolupada per estandarditzar i agilitzar el procés de notificació i gestió d'incidents de seguretat. El sistema està dissenyat per ser utilitzat per equips de CSIRT i analistes.
+                    The Incident Reporting System (IRS) is a tool designed to standardize and streamline the notification and management of security incidents, fundamental for small businesses.
                     <br><br>
-                    **Funcionalitats Principals:** El cor del sistema és un formulari de contacte robust amb validació de dades (on s'aplicaran les validacions de *patterns* de HTML5 i JavaScript). Un cop registrat, l'incident passa per un cicle de vida (Obert, En curs, Tancat) amb assignació automàtica a l'analista adequat.
-                    <br><br>
-                    **Tecnologia:** El backend va ser desenvolupat utilitzant un framework robust per gestionar la base de dades d'incidents, garantint la integritat i confidencialitat de la informació. La interfície d'usuari es va dissenyar prioritzant l'experiència de l'usuari (UX) per assegurar que la notificació d'un incident fos ràpida i intuïtiva. Aquest projecte inclou les **3 funcionalitats en Javascript** requerides.
+                    <strong>Data Acquisition and Persistence:</strong>
+                    The core of the system starts with a form to collect incident data, ensuring correct tracking. Initial data is stored and then <strong>exported to a CSV file</strong> (incidencias.csv); the following data are test data.
                 </p>
+                <div class="imagen-parrafo">
+                    <img src="../img/datos_csv.png" alt="Screenshot of data in CSV format">
+                </div>
+
+                <p>
+                    <strong>Format Migration and Validation (XML):</strong>
+                    The system includes functionality for the <strong>transformation of data from CSV to XML format</strong> (incidències.xml), which is crucial for information exchange. To verify the resulting structure, a browser (like Firefox, Chrome) and code formatting tools are used.
+                </p>
+                <div class="imagen-parrafo">
+                    <img src="../img/datos_xml.png" alt="Structure of an XML file with incidents">
+                </div>
+
+                <p>
+                    <strong>Processing and Analysis (Python):</strong>
+                    A small Python program was developed to read incidents from the XML file and process the information to obtain <strong>meaningful statistics</strong>. Although it is a console application, visual format (colors, tabs) is prioritized to facilitate reading the obtained information. This phase also includes logic to filter out data that does not provide useful information or is erroneous (e.g., an incident with a future date).
+                </p>
+                <div class="imagen-parrafo">
+                    <img src="../img/menu_py.png" alt="Python application menu">
+                </div>
+                <div class="imagen-parrafo">
+                    <img src="../img/estadistica_py.png" alt="Statistics generated by the Python script">
+                </div>
+                <div class="imagen-parrafo">
+                    <img src="../img/consola_py.png" alt="Python console output with incident analysis">
+                </div>
+
+                <p>
+                    <strong>Final Storage (JSON):</strong>
+                    The processed and analyzed information is stored in a <strong>JSON file</strong> (incidencies.json). Before saving, the system checks if the file already exists. If it exists, the user can choose to <strong>Overwrite</strong> the content or <strong>Append the new incidents</strong> (avoiding ID duplicates). The manipulation of these data formats (JSON, XML) is aligned with knowledge of client scripting languages and information management for data exchange.
+                </p>
+                <div class="imagen-parrafo">
+                    <img src="../img/datos_json.png" alt="Structure of a JSON file with processed data">
+                </div>
             </article>
+
             <footer>
-                <p>Cicle de vida de l'incident: Detecció > Classificació > Contenció > Eradicació > Recuperació > Lliçons Apreses.</p>
-                <a href="#demo">Veure la Demo del Sistema</a>
+                <p>Project Goal: Efficient, structured security incident handling across multiple data formats (CSV, XML, JSON).</p>
             </footer>
+
         </section>
     </main>
 
     <footer class="peu-de-pagina-general">
-        <p>&copy; 2025 [El vostre nom]. Tots els drets reservats.</p>
+        <p>&copy; 2025 Eduardo. All rights reserved.</p>
         <div class="xarxes-socials">
             <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
         </div>
     </footer>
+
+    <script src="../js/irs-interaction.js"></script>
 </body>
 </html>
